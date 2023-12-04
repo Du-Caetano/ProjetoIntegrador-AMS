@@ -1,0 +1,28 @@
+.texto {
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto ;
+    width: 400px;
+    text-align: center;
+    color: #fff;
+    margin-top: -300px;
+    
+  }
+  img{
+    margin-left: 650px;
+    margin-top: -950px;
+    width: 230px;
+  }
+  
+  h1 {
+    font-size: 34px;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  

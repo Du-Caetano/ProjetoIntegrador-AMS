@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<!-- <input type="text" class="input-search" [(ngModel)]="searchTerm" (keyup)="search($event)"> -->
+
+  <div class="container">
+    <div class="categorias">
+     
+    <div class="grid-container">
+      <button class="category"ngbDropdownItem (click)="filter('Computadores')">
+        <i class="fa-solid fa-tv"></i>
+                  <span>Computadores</span>
+      </button>
+      <button class="category"ngbDropdownItem (click)="filter('Notebook')">
+          <i class="fas fa-tv"></i>
+          <span>Notebook</span>
+      </button>
+      <button class="category"ngbDropdownItem (click)="filter('Camera')">
+          <i class="fas fa-camera"></i>
+          <span>Cameras</span>
+      </button>
+      <button class="category"ngbDropdownItem (click)="filter('VideoGame')">
+          <i class="fas fa-gamepad"></i>
+          <span>Video Game</span>
+      </button>
+      <button class="category"ngbDropdownItem (click)="filter('Celulares')">
+        <i class="fa-solid fa-phone"></i>
+          <span>Telefone</span>
+      </button>
+      <button class="category" ngbDropdownItem (click)="filter('')">
+        <i class="fa-solid fa-bug"></i>
+          <span>Todos os produtos</span>
+      </button>
+  </div>
+    <div class="row">
+
+
+
+    <ng-container *ngFor="let item of filterCategory | filter:searchKey:'idCategory'">
+
+  <div class="card">
+  <div class="imgBx">
+    <img
+      src="{{item.urlImage}}"
+      alt=""
+    />
+  </div>
+  <div class="contentBx">
+    <h3>{{item.name}}</h3>
+    <h2 class="price">R$ {{item.price}}</h2>
+    <h3>{{item.description}}</h3>
+    <a class="buy"(click)=addtocart(item)  routerLink="/carrinho">Adicionar ao Carrinho</a>
+  </div>
+</div>
+
+</ng-container>
+</div>
+  </div>

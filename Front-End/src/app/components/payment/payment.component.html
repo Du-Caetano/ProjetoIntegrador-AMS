@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <h1 class="h3 mb-5 mt-3">Pagamento</h1>
+    <div class="row">
+      <!-- Order Summary -->
+      <div class="col-lg-3">
+        <div class="card position-sticky top-0">
+          <div class="p-3 bg-light bg-opacity-10">
+            <h6 class="card-title mb-3">Resumo do Pedido</h6>
+            <div class="d-flex justify-content-between mb-1 small">
+              <span>Subtotal</span> <span>${{cartTotal}}</span>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between mb-4 small">
+              <span>Total</span> <strong class="text-dark">R${{cartTotal}}</strong>
+            </div>
+          </div>
+  
+          <!-- Produtos Comprados -->
+          <div class="container">
+            <div *ngFor="let product of products" class="mb-4">
+              <div class="card">
+                <img [src]="product.urlImage" alt="Product Image" class="card-img-top" style="object-fit: contain">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.name}}</h5>
+                  <p class="card-text">
+                    <span class="text-muted">Id:</span> {{product.id}}<br>
+                    <span class="text-muted">Descrição:</span> {{product.description}}<br>
+                    <span class="font-size-lg text-primary">Preço: R${{product.price}}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Botão de retorno abaixo do resumo do pedido -->
+            <button type="button" class="btn btn-secondary mb-3" (click)="returnToProducts()">Retornar aos Produtos</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- PayPal -->
+      <div class="col-lg-9">
+        <hr />
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+      </div>
+    </div>
+  </div>

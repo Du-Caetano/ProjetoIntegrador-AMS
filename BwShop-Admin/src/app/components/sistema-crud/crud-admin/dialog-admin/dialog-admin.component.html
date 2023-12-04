@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Adicionar Admin</h1>
+<div mat-dialog-content>
+  <form [formGroup]="adminForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome do Admin</mat-label>
+      <input formControlName="name" matInput placeholder="Name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>E-mail do Admin</mat-label>
+      <input type="email" formControlName="email" matInput placeholder="exemplo@mail.com" />
+    </mat-form-field>
+
+
+  </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+  <button
+    style="margin-left: 8px"
+    mat-raised-button
+    color="primary"
+    (click)="AddAdmin()"
+  >
+    {{ actionBtn }}
+  </button>
+</div>

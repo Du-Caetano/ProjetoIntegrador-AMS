@@ -1,0 +1,25 @@
+.container-fluid {
+    background-color: #f0f0f0;
+    padding: 50px 0;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #28a745;
+  }
+  
+  .btn-success {
+    background-color: #28a745; 
+    border-color: #28a745; 
+  }
+  
+  .btn-success:hover {
+    background-color: #218838; 
+    border-color: #1e7e34; 
+  }

@@ -1,0 +1,67 @@
+  .payment-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0; /* Removido o espaçamento entre os itens do grid */
+    margin-top: -10%;
+    font-family: 'Arial', sans-serif;
+    display: absolute;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .payment-card {
+    background-color: #ababab; /* Cor de fundo preta */
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionado sombra */
+    margin-left: 5%;
+  }
+
+  .payment-icon {
+    font-size: 40px; /* Ajustado o tamanho do ícone */
+    margin-bottom: 20px;
+    color: #ffffff; /* Cor do ícone */
+  }
+
+  .payment-card p {
+    margin: 0;
+    color: #fff; /* Cor do texto branco */
+  }
+
+  .payment-grid .payment-card:nth-child(2) {
+    background-color: #ababab; /* Cor de fundo azul */
+    color: #fff;
+  }
+
+ /* Estilo do botão "Ver mais" */
+button {
+background-color: #ffffff; /* Cor de fundo azul */
+color: #fff;
+padding: 5px 5px;
+border: none; /* Removendo a borda */
+border-radius: 10px;
+cursor: pointer;
+font-size: 10px;
+transition: background-color 0.3s ease;
+margin-top: 20px;
+}
+
+button:hover {
+background-color: #dbdbdb; /* Cor de fundo azul escuro ao passar o mouse */
+}
+
+/* Adicionando a cor azul para o texto do botão */
+button, button:hover {
+color: #000000; /* Cor do texto azul */
+}
+
+@media only screen and (max-width: 1444px) {
+   
+
+  .payment-grid {
+    grid-template-columns: repeat(4, 1fr);
+    font-family: 'Arial', sans-serif;
+  }
+}

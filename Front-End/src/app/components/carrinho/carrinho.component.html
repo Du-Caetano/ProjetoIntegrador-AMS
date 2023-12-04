@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<ng-container *ngIf="products.length != 0">
+  <div class="card-table">
+    <div class="cart-product">
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th>N.º</th>
+            <th>Nome do produto</th>
+            <th>Imagem do produto</th>
+            <th>Descrição do produto</th>
+            <th>Preço do produto</th>
+            <th>Quantidade do produto</th>
+            <th>Total</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of products; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td><img style="width: 120px;" src="{{item.urlImage}}" alt=""></td>
+            <th style="width: 12%;">{{item.description}}</th>
+            <td style="width: 12%;">R$ {{item.price}}</td>
+            <td style="width: 12%;">{{item.amount}}</td>
+            <td style="width: 12%;">R$ {{item.price}}</td>
+            <td>
+              <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4"></td>
+            <td><button (click)="emptycart()" class="btn btn-danger">Esvaziar</button></td>
+            <td><button routerLink="/category" class="btn btn-primary"> Produtos</button></td>
+            <td><button routerLink="/payment" class="btn btn-success">Pagar</button></td>
+            <td><strong>Total : R${{grandTotal}}</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="products.length == 0">
+  <div class="container">
+    <div class="card">
+      <h5 class="card-title" style="font-size: 20px;">Meu Carrinho</h5>
+    </div>
+    <div class="center">
+      <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+      <h4 style="font-size: 25px;">Seu Carrinho está vazio</h4>
+      <h6 style="font-size: 20px;">Adicione um Item</h6>
+      <button routerLink="/category" class="btn btn-primary">Adicione um Produto</button>
+    </div>
+  </div>
+</ng-container>

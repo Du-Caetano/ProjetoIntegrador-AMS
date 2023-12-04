@@ -1,0 +1,52 @@
+    <app-navbar></app-navbar>
+
+    <app-carousel></app-carousel>
+    <app-promo></app-promo>
+
+    <div class="ofertas">
+        <h1 class="">Ofertas relâmpago</h1>
+    </div>
+    <div class="row" >
+        <ng-container *ngFor="let item of filterCategory | filter:'Promoções':'idCategory'">
+      <div class="card">
+      <div class="imgBx">
+        <img
+          src="{{item.urlImage}}"
+          alt=""
+        />
+      </div>
+      <div class="contentBx">
+        <h3>{{item.name}}</h3>
+        <h2 class="price">R$ {{item.price}}</h2>
+        <h3>{{item.description}}</h3>
+        <a  class="buy" (click)=addtocart(item) routerLink="/carrinho">Adicionar ao Carrinho</a>
+      </div>
+    </div>
+    </ng-container>
+    </div>
+
+    <div class="ofertas">
+      <h1 class="">Ofertas de Natal</h1>
+  </div>
+  <div class="row" >
+      <ng-container *ngFor="let item of filterCategory | filter:'Natal':'idCategory'">
+    <div class="card">
+    <div class="imgBx">
+      <img
+        src="{{item.urlImage}}"
+        alt=""
+      />
+    </div>
+    <div class="contentBx">
+      <h3>{{item.name}}</h3>
+      <h2 class="price">R$ {{item.price}}</h2>
+      <h3>{{item.description}}</h3>
+      <a  class="buy" (click)=addtocart(item) routerLink="/carrinho">Adicionar ao Carrinho</a>
+    </div>
+  </div>
+  </ng-container>
+  </div>
+
+    <app-rodape></app-rodape>
+    
+    
